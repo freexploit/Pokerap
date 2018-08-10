@@ -56,7 +56,7 @@ defmodule Pokerap.Url do
       value when is_integer(value) -> Integer.to_string(value)
       value when is_atom(value) -> Atom.to_string(value)
     end
-    "http://pokeapi.co/api/v2/#{endpoint}/#{downcase?.(value)}/"
+    "https://pokeapi.co/api/v2/#{endpoint}/#{downcase?.(value)}/"
   end
 
   @doc """
@@ -89,6 +89,7 @@ defmodule Pokerap.Url do
   "smoothness" => 25, "soil_dryness" => 15}}
   ```
   """
+
   def get_endpoint(endpoint, value) do
     get_url(build_url(endpoint,value))
   end
